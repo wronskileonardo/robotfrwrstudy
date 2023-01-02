@@ -15,11 +15,14 @@ jobs:
       - name: Install Robot
         run:  pip install robotframework
 
+      - name: Install Webdriver
+        run: pip install webdrivermanager
+
       - name: Install Selenium
-        run: |
-        pip install webdrivermanager
-        pip install --upgrade robotframework-seleniumlibrary
-        webdrivermanager chrome --linkpath /usr/local/bin
+        run: pip install --upgrade robotframework-seleniumlibrary
+
+      -name: Link Chrome PATH
+        run: webdrivermanager chrome --linkpath /usr/local/bin
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
