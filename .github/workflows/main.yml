@@ -7,9 +7,16 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - name: Checkout
-        uses: test_cases/
-      - name: Robot Framework
-        uses: joonvena/robotframework-docker-action@v1.0
-        with:
-          browser: 'chrome'
-      - run: robot test_cases/login_form.robot
+        uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        
+      - name: Install Robot
+        run:  pip install robotframework
+
+      - name: Create folder for reports
+        run: mkdir reports
+
+      - name: Robot Framework Test
+        run: robot test_cases/login_form.robot
