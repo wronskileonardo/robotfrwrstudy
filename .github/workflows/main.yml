@@ -1,0 +1,15 @@
+name: Regression Test
+
+on: [pull_request]
+
+jobs: 
+  test:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout
+        uses: test_cases/
+      - name: Robot Framework
+        uses: joonvena/robotframework-docker-action@v1.0
+        with:
+          browser: 'chrome'
+      - run: robot test_cases/login_form.robot
