@@ -21,7 +21,7 @@ jobs:
       - name: Install Selenium
         run: pip install --upgrade robotframework-seleniumlibrary
 
-      -name: Link Chrome PATH
+      - name: Link Chrome PATH
         run: webdrivermanager chrome --linkpath /usr/local/bin
 
       - name: Setup Chrome
