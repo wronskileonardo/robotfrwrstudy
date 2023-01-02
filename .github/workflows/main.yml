@@ -18,6 +18,10 @@ jobs:
       - name: Install Selenium
         run: pip install selenium robotframework-selenium2library webdrivermanager
 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+        run: chrome --version
+
       - name: Create folder for reports
         run: mkdir reports
 
