@@ -21,17 +21,13 @@ jobs:
       - name: Install Selenium
         run: pip install --upgrade robotframework-seleniumlibrary
 
-      - name: Install Chromium
-        run: pip install chromium && pip install chromium-driver 
-
       - name: Link Chrome PATH
         run: webdrivermanager chrome --linkpath /usr/local/bin
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
 
-      - name: Create folder for reports
-        run: mkdir reports
-
       - name: Robot Framework Test
         run: robot test_cases/login_form.robot
+        with:
+          browser: chrome
