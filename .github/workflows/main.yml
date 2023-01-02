@@ -15,6 +15,9 @@ jobs:
       - name: Install Robot
         run:  pip install robotframework
 
+      - name: Install Selenium
+        run: pip install selenium robotframework-selenium2library webdrivermanager
+
       - name: Create folder for reports
         run: mkdir reports
 
