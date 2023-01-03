@@ -27,7 +27,7 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
         with: 
-          headed: false
+          headless: true
 
       - name: Robot Framework Test
         run: robot test_cases/login_form.robot
