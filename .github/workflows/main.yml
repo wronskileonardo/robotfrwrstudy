@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs: 
   test:
-    runs-on: [ubuntu-latest]
+    runs-on: [windows-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,12 +20,6 @@ jobs:
 
       - name: Install Selenium
         run: pip install --upgrade robotframework-seleniumlibrary
-
-      - name: Link Chrome PATH
-        run: webdrivermanager chrome --linkpath /usr/local/bin
-
-      - name: Set No Sandbox
-        run: webdrivermanager chrome --no-sandbox
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
