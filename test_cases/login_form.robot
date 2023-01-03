@@ -7,12 +7,33 @@ Test Setup        Start Session
 Test Teardown        End Session
 
 *** Test Cases ***
-Login com sucesso
+Login with success
     Go To                  ${URL}/login
     Login With             tomsmith        SuperSecretPassword!
 
-    Element Should Contain        ${logged_message}        You logged into a secure area!
+    Element Should Contain        ${log_message}        You logged into a secure area!
 
+
+Invalid username
+    Go To        ${URL}/login
+    Login With        notanusername        SuperSecretPassword!
+
+    Element Should Contain        ${log_message}        Your username is invalid!
+
+Invalid password
+    Go To        ${URL}/login
+    Login With        tomsmith        notapassword
+
+    Element Should Contain        ${log_message}        Your password is invalid!
+
+Logout from page
+    Go To                  ${URL}/login
+    Login With             tomsmith        SuperSecretPassword!
+
+    Element Should Contain        ${log_message}        You logged into a secure area!
+
+    Click Element                 ${logout_button}
+    Element Should Contain        ${log_message}        You logged out of the secure area!
 ### BDD EXAMPLE ###
 
 # *** Test Cases ***
