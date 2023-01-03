@@ -24,10 +24,11 @@ jobs:
       - name: Link Chrome PATH
         run: webdrivermanager chrome --linkpath /usr/local/bin
 
+      - name: Set No Sandbox
+        run: webdrivermanager chrome --no-sandbox
+
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
-        with: 
-          headless: true
 
       - name: Robot Framework Test
         run: robot test_cases/login_form.robot
