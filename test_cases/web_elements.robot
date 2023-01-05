@@ -16,7 +16,7 @@ Count each hover image and validate them
     FOR    ${loop}    IN RANGE    1    ${ELEMENT_COUNT}+1
         ${CURRENT_IMAGE_XPATH}=    CATENATE    ${hover_images} [ ${loop} ]
         ${CURRENT_LABEL_XPATH}=    CATENATE    ${CURRENT_IMAGE_XPATH}    ${hover_label}
-        ${CURRENT_LABEL_TEXT}=    CATENATE    name: user${image}
+        ${CURRENT_LABEL_TEXT}=    CATENATE    name: user${loop}
 
         Mouse Over      ${CURRENT_IMAGE_XPATH}
         Wait Until Element Contains        ${CURRENT_LABEL_XPATH}        ${CURRENT_LABEL_TEXT}        5s
