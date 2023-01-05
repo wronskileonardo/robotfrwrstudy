@@ -8,26 +8,26 @@ Test Teardown        End Session
 
 *** Test Cases ***
 Login with success
-    Go To                  ${URL}/login
+    Go To                  ${URL}login
     Login With             tomsmith        SuperSecretPassword!
 
     Element Should Contain        ${log_message}        You logged into a secure area!
 
 
 Invalid username
-    Go To        ${URL}/login
+    Go To        ${URL}login
     Login With        notanusername        SuperSecretPassword!
 
     Element Should Contain        ${log_message}        Your username is invalid!
 
 Invalid password
-    Go To        ${URL}/login
+    Go To        ${URL}login
     Login With        tomsmith        notapassword
 
     Element Should Contain        ${log_message}        Your password is invalid!
 
 Logout from page
-    Go To                  ${URL}/login
+    Go To                  ${URL}login
     Login With             tomsmith        SuperSecretPassword!
 
     Element Should Contain        ${log_message}        You logged into a secure area!
