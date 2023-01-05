@@ -25,4 +25,4 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Robot Framework Test
-        run: robot test_cases/login_form.robot
+        run: robot test_cases
