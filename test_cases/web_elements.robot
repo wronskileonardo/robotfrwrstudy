@@ -23,3 +23,10 @@ Count each hover image and validate them
         Mouse Out        ${CURRENT_IMAGE_XPATH}
         Element Should Not Be Visible        ${CURRENT_LABEL_TEXT}
     END
+
+Upload a file from the project
+    Go To        ${URL}upload
+
+    Choose File            ${select_file_button}        ${EXECDIR}/resources/test_assets/temp_10mb_file
+    Click Element        ${upload_file_button}
+    Wait Until Element Contains        ${uploaded_successfully_text}        File Uploaded!        20s

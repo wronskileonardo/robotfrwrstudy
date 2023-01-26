@@ -8,3 +8,7 @@ ${logout_button}         css:a[href="/logout"]
 
 ${hover_label}          //div[@class='figcaption']/h5
 ${hover_images}         xpath://div[@class='figure']
+
+${select_file_button}        css:input[id='file-upload']
+${upload_file_button}        css:input[id='file-submit']
+${uploaded_successfully_text}        css:div[class='example']
